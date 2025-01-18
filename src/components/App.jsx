@@ -1,3 +1,5 @@
+
+import '../styles/normalize.css'
 import '../styles/App.css'
 import ScoreBoard from './ScoreBoard.jsx'
 import GameBoard from './GameBoard.jsx'
@@ -21,11 +23,12 @@ function App() {
 
   return (
     <>
-    <header><h1 className="title">PokeMemo</h1></header>
-    <body>
-      <ScoreBoard />
+    <header className="topBar"><h1 className="title">PokeMemo</h1></header>
+    <main>
+
       <GameBoard />
-    </body>
+      <ScoreBoard />
+    </main>
     </>
   )
 }

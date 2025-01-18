@@ -1,0 +1,25 @@
+.card{
+    width: 500px;
+    height: 164px;
+    background-image: url("../assets/panel.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card:hover{
+    transform: scale(0.98);
+    background-image: url("../assets/panelhover.png");
+    cursor: pointer;
+    
+}
+
+.cardText{
+    color: white;
+    font-size: 4rem;
+    margin: 0px;
+    padding-top: 2rem;
+}
