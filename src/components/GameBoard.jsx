@@ -71,7 +71,6 @@ async function getRandomPokemon(amount) {
 
     selectedPokemon.push(parsedPokemon);
   }
-  console.log(selectedPokemon);
   return selectedPokemon;
 }
 
@@ -98,7 +97,6 @@ export default function GameBoard({
   //Function to handle card clicks
 
   function handleCardClick(eventName) {
-
     let curr = [...currPokemon];
 
     //finds the index of the clicked mon

@@ -1,77 +1,72 @@
 @font-face {
-    font-family: PokeFont;
-    src: url(../assets/pokeFont.ttf);
+  font-family: PokeFont;
+  src: url(../assets/pokeFont.ttf);
 }
 
-*{
-    font-family: PokeFont;
-    color: white;
-    overflow: hidden;
+* {
+  color: white;
+  font-family: PokeFont;
+  overflow: hidden;
 }
 
-h1{
-    margin: 0px;
-    font-size: 4.25rem;
-    font-weight: 500;
-    padding-top: 8px;
-    padding-left: 20px;
+h1 {
+  font-size: 4.25rem;
+  font-weight: 500;
+  margin: 0px;
+  padding-left: 20px;
+  padding-top: 8px;
 }
 
-main{
-    background-image: url(../assets/background.png);
-    background-size: cover;
-    height: calc(100vh - 108px);
-
-    background-color: black;
+main {
+  background-color: black;
+  background-image: url(../assets/background.png);
+  background-size: cover;
+  height: calc(100vh - 108px);
 }
-.startscreen{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.startscreen {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.playing{
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    grid-template-rows: 1fr;
-}
-
-.topBar{
-    display: flex;
-    background-image: url(../assets/bar.png);
-    width: 100%;
-    height: 108px;
-    color: white;
-    
+.playing {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr;
 }
 
-
-.winscreen, .losescreen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-
+.topBar {
+  background-image: url(../assets/bar.png);
+  color: white;
+  display: flex;
+  height: 108px;
+  width: 100%;
 }
 
-.winscreen h1, .losescreen h1 {
-    font-size: 7rem;
+.winscreen,
+.losescreen {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.winscreen h2, .losescreen h2 {
-    font-size: 4rem;
-    font-weight: 400;
-    color: #b6c0dd;
+.winscreen h1,
+.losescreen h1 {
+  font-size: 7rem;
 }
 
-
-
+.winscreen h2,
+.losescreen h2 {
+  color: #b6c0dd;
+  font-size: 4rem;
+  font-weight: 400;
+}
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 200px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 200px;
 }

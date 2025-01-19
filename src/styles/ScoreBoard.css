@@ -1,35 +1,36 @@
-.scoreboard{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 100px;
+.scoreboard {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 100px;
 }
 
-.bignumber{
-    font-size: 7rem;
-    font-weight: 600;
+.bignumber {
+  font-size: 7rem;
+  font-weight: 600;
 }
 
-.smallnumber{
-    font-size: 3rem;
-    color: #b6c0dd;
+.smallnumber {
+  color: #b6c0dd;
+  font-size: 3rem;
 }
 
-.smallnumber, .scoreboard h3{
-    opacity: 80%;
+.smallnumber,
+.scoreboard h3 {
+  opacity: 80%;
 }
 
-.scoreboard h3{
-    font-size: 3rem;
-    font-weight: 400;
-    color: #b6c0dd;
+.scoreboard h3 {
+  color: #b6c0dd;
+  font-size: 3rem;
+  font-weight: 400;
 }
 
-.scoreboard h2{
-    font-size: 7rem;
+.scoreboard h2 {
+  font-size: 7rem;
 }
 
 .scoreboard * {
-    margin: 0px;
+  margin: 0px;
 }

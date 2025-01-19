@@ -1,60 +1,59 @@
-.card{
-    width: 500px;
-    height: 164px;
-    background-image: url("../assets/panel.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+.card {
+  align-items: center;
+  background-image: url("../assets/panel.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: row;
+  height: 164px;
+  justify-content: flex-start;
+  width: 500px;
 }
 
-.card:hover{
-    transform: scale(0.98);
-    background-image: url("../assets/panelhover.png");
-    cursor: pointer;
-    
+.card:hover {
+  background-image: url("../assets/panelhover.png");
+  cursor: pointer;
+  transform: scale(0.98);
 }
 
-.cardText{
-    color: white;
-    font-size: 4rem;
-    margin: 0px;
-    padding-top: 2rem;
+.cardText {
+  color: white;
+  font-size: 4rem;
+  margin: 0px;
+  padding-top: 2rem;
 }
 
-.card img{
-    height: 164px;
-    width: 164px;
-    padding-left: 15px;
-    margin-right: 15px;
+.card img {
+  height: 164px;
+  margin-right: 15px;
+  padding-left: 15px;
+  width: 164px;
 }
 
-.return img{
-    height: 112px;
-    width: 102px;
-    padding-left: 15px;
-    margin-right: 70px;
+.return img {
+  height: 112px;
+  margin-right: 70px;
+  padding-left: 15px;
+  width: 102px;
 }
-.easy{
- background-image: url("../assets/easy.png");
-}
-
-.easy:hover{
-    background-image: url("../assets/easyhover.png");
-}
-.medium{
- background-image: url("../assets/medium.png");
+.easy {
+  background-image: url("../assets/easy.png");
 }
 
-.medium:hover{
-    background-image: url("../assets/mediumhover.png");
+.easy:hover {
+  background-image: url("../assets/easyhover.png");
 }
-.hard{
-    background-image: url("../assets/hard.png");
-   }
-   
-   .hard:hover{
-       background-image: url("../assets/hardhover.png");
-   }
+.medium {
+  background-image: url("../assets/medium.png");
+}
+
+.medium:hover {
+  background-image: url("../assets/mediumhover.png");
+}
+.hard {
+  background-image: url("../assets/hard.png");
+}
+
+.hard:hover {
+  background-image: url("../assets/hardhover.png");
+}

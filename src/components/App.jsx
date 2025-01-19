@@ -7,11 +7,14 @@ import Card from "./Card.jsx";
 import ball from "../assets/ball.png";
 
 function App() {
-  // possible values: startscreen, playing, winscreen, losescreen
+  // Possible values: startscreen, playing, winscreen, losescreen
   const [gameStatus, setGameStatus] = useState("startscreen");
-  const [highscore, setHighscore] = useState(0);
 
-  //TODO: see if this works as it should, and any other variables shouldnt be reset
+  const [highscore, setHighscore] = useState(0);
+  const [currScore, setCurrScore] = useState(0);
+
+  // Handling Functions
+
   function handleRestart() {
     setGameStatus("startscreen");
   }
@@ -20,7 +23,7 @@ function App() {
     setGameStatus("playingeasy");
   }
   function handleStartMedium() {
-    setGameStatus("playingmedium"); 
+    setGameStatus("playingmedium");
   }
   function handleStartHard() {
     setGameStatus("playinghard");
@@ -28,16 +31,25 @@ function App() {
 
   function handleWin() {
     setGameStatus("winscreen");
+    setCurrScore(0);
   }
 
   function handleLoss() {
     setGameStatus("losescreen");
+    setCurrScore(0);
   }
 
-  function manageScore(){
-    console.log("scored")
-  }
+  function manageScore() {
+    //creates a new variable and adds a score
+    let score = currScore;
+    score++;
 
+    setCurrScore(score);
+
+    if (score > highscore) {
+      setHighscore(score);
+    }
+  }
 
   // depending on game status, renders different things.
 
@@ -57,8 +69,13 @@ function App() {
     case "playingeasy": {
       rendercontents = (
         <main className="playing">
-          <GameBoard amount={6} winFunct={handleWin} loseFunct={handleLoss} scoreFunct={manageScore}/>
-          <ScoreBoard highscore={highscore} />
+          <GameBoard
+            amount={6}
+            winFunct={handleWin}
+            loseFunct={handleLoss}
+            scoreFunct={manageScore}
+          />
+          <ScoreBoard score={currScore} highscore={highscore} />
         </main>
       );
       break;
@@ -66,8 +83,13 @@ function App() {
     case "playingmedium": {
       rendercontents = (
         <main className="playing">
-          <GameBoard amount={9} winFunct={handleWin} loseFunct={handleLoss} scoreFunct={manageScore}/>
-          <ScoreBoard highscore={highscore} />
+          <GameBoard
+            amount={9}
+            winFunct={handleWin}
+            loseFunct={handleLoss}
+            scoreFunct={manageScore}
+          />
+          <ScoreBoard score={currScore} highscore={highscore} />
         </main>
       );
       break;
@@ -75,8 +97,13 @@ function App() {
     case "playinghard": {
       rendercontents = (
         <main className="playing">
-          <GameBoard amount={15} winFunct={handleWin} loseFunct={handleLoss} scoreFunct={manageScore}/>
-          <ScoreBoard highscore={highscore} />
+          <GameBoard
+            amount={15}
+            winFunct={handleWin}
+            loseFunct={handleLoss}
+            scoreFunct={manageScore}
+          />
+          <ScoreBoard score={currScore} highscore={highscore} />
         </main>
       );
       break;
@@ -119,14 +146,6 @@ function App() {
       throw new Error("Undefined game status");
     }
   }
-
-
-  //gameboard component.
-  //effect that gets the amount of images based on diff
-  //keep the amount of cards
-
-  //hashmap to keep track of visited
-  //add win condition
 
   return (
     <>
