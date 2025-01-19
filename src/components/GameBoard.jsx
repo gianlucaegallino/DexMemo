@@ -7,8 +7,7 @@ import Card from "./Card";
 const POKEMON_AMOUNT = 1025;
 const URL = "https://pokeapi.co/api/v2/pokemon/";
 
-
-//Utility function that returns an int in a range
+//Utility function that returns an int in a range (Min inclusive, Max exclusive)
 
 function getRandomInt(min, max) {
   const minCeiled = Math.ceil(min);
@@ -36,9 +35,21 @@ async function requestPokemon(pokemonId) {
 
 async function getRandomPokemon(amount) {
   let selectedPokemon = [];
+  let selectedIds = new Map();
+
   for (let i = 0; i < amount; i++) {
     //Generate random number
     let num = getRandomInt(1, POKEMON_AMOUNT + 1);
+
+    //makes sure there are no repeat mons
+
+    while (selectedIds.has(num)) {
+      num = getRandomInt(1, POKEMON_AMOUNT + 1);
+    }
+
+    //adds the number to the set
+    selectedIds.set(num, 1);
+
     //use that number to request a pokemon
     let pokemon = await requestPokemon(num);
     //roll a shiny number and select image accordingly
@@ -58,28 +69,33 @@ async function getRandomPokemon(amount) {
     };
 
     selectedPokemon.push(parsedPokemon);
-
   }
-  //TODO: Remove this console log
   console.log(selectedPokemon);
   return selectedPokemon;
 }
 
 //Function implementing the Fisher-Yates shuffle algorithm
 
-function fisherYatesShuffle(deck){
+function fisherYatesShuffle(deck) {
   const len = deck.length;
-  for(let i = len-1; i > 0; i--){
-    const j = getRandomInt(1, len-1);
+
+  for (let i = len - 1; i > 0; i--) {
+    const j = getRandomInt(0, i + 1);
     [deck[i], deck[j]] = [deck[j], deck[i]];
   }
   return deck;
-
 }
 
 export default function GameBoard({ amount = 0 }) {
   const [currPokemon, setCurrPokemon] = useState([]);
 
+  //Function to handle card clicks
+  function handleCardClick() {
+    let curr = [...currPokemon];
+    let newState = fisherYatesShuffle(curr); // Shuffle a copy of the array
+
+    setCurrPokemon(newState);
+  }
 
   useEffect(() => {
     let ignore = false;
@@ -95,11 +111,14 @@ export default function GameBoard({ amount = 0 }) {
     };
   }, [amount]);
 
-
   const cardList = currPokemon.map((poke) => (
-    <Card text={poke.name} imgurl={poke.img} key={poke.key} />
+    <Card
+      text={poke.name}
+      imgurl={poke.img}
+      key={poke.key}
+      extraFunction={handleCardClick}
+    />
   ));
-
 
   return <div className="gameboard">{cardList}</div>;
 }

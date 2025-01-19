@@ -17,7 +17,6 @@ function App() {
   //effect that gets the amount of images based on diff 
   //keep the amount of cards
 
-  //implement fisher yates shuffle
   //hashmap to keep track of visited
   //add win condition
 
@@ -26,7 +25,7 @@ function App() {
     <header className="topBar"><h1 className="title">MemoDex</h1></header>
     <main>
 
-      <GameBoard amount={1} />
+      <GameBoard amount={4} />
       <ScoreBoard />
     </main>
     </>
