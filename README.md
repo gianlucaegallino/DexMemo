@@ -1,4 +1,4 @@
-# PokeMemo
+# MemoDex
 
 A Pokemon themed memory card game.
 

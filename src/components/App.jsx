@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-    <header className="topBar"><h1 className="title">PokeMemo</h1></header>
+    <header className="topBar"><h1 className="title">MemoDex</h1></header>
     <main>
 
       <GameBoard amount={1} />
