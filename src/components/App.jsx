@@ -25,7 +25,7 @@ function App() {
     <header className="topBar"><h1 className="title">MemoDex</h1></header>
     <main>
 
-      <GameBoard amount={4} />
+      <GameBoard amount={3} />
       <ScoreBoard />
     </main>
     </>
