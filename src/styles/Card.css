@@ -30,3 +30,31 @@
     padding-left: 15px;
     margin-right: 15px;
 }
+
+.return img{
+    height: 112px;
+    width: 102px;
+    padding-left: 15px;
+    margin-right: 70px;
+}
+.easy{
+ background-image: url("../assets/easy.png");
+}
+
+.easy:hover{
+    background-image: url("../assets/easyhover.png");
+}
+.medium{
+ background-image: url("../assets/medium.png");
+}
+
+.medium:hover{
+    background-image: url("../assets/mediumhover.png");
+}
+.hard{
+    background-image: url("../assets/hard.png");
+   }
+   
+   .hard:hover{
+       background-image: url("../assets/hardhover.png");
+   }

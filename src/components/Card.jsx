@@ -1,7 +1,7 @@
 import sound from "../assets/click.mp3";
 import "../styles/Card.css";
 
-export default function Card({ text = "", imgurl = null, extraFunction = null }) {
+export default function Card({ text = "", imgurl = null, extraFunction = ()=>{}, extraclass = ""}) {
   const playSound = () => {
     const audio = new Audio(sound);
     audio.play();
@@ -14,7 +14,7 @@ export default function Card({ text = "", imgurl = null, extraFunction = null })
   } else imageElem = "";
 
   return (
-    <div className="card" onClick={()=>{
+    <div className={"card " + extraclass} onClick={()=>{
       playSound();
       extraFunction();
     }}>
