@@ -55,6 +55,19 @@ main{
 
 }
 
+.winscreen h1, .losescreen h1 {
+    font-size: 7rem;
+}
+
+.winscreen h2, .losescreen h2 {
+    font-size: 4rem;
+    font-weight: 400;
+    color: #b6c0dd;
+}
+
+
+
+
 .container {
     display: flex;
     flex-direction: column;

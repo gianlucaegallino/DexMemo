@@ -8,7 +8,7 @@ import ball from "../assets/ball.png";
 
 function App() {
   // possible values: startscreen, playing, winscreen, losescreen
-  const [gameStatus, setGameStatus] = useState("startscreen");
+  const [gameStatus, setGameStatus] = useState("losescreen");
   const [highscore, setHighscore] = useState(0);
 
   //TODO: see if this works as it should, and any other variables shouldnt be reset
