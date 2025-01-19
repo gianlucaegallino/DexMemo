@@ -98,7 +98,7 @@ function App() {
       rendercontents = (
         <main className="playing">
           <GameBoard
-            amount={15}
+            amount={12}
             winFunct={handleWin}
             loseFunct={handleLoss}
             scoreFunct={manageScore}
