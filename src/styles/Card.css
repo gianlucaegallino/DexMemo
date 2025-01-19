@@ -5,9 +5,9 @@
     background-size: contain;
     background-repeat: no-repeat;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .card:hover{
@@ -22,4 +22,11 @@
     font-size: 4rem;
     margin: 0px;
     padding-top: 2rem;
+}
+
+.card img{
+    height: 164px;
+    width: 164px;
+    padding-left: 15px;
+    margin-right: 15px;
 }
