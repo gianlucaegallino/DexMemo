@@ -14,9 +14,9 @@ export default function Card({ text = "", imgurl = null, extraFunction = ()=>{},
   } else imageElem = "";
 
   return (
-    <div className={"card " + extraclass} onClick={()=>{
+    <div className={"card " + extraclass} onClick={(e)=>{
       playSound();
-      extraFunction();
+      extraFunction(text);
     }}>
       {imageElem}
       <p className="cardText">{text}</p>

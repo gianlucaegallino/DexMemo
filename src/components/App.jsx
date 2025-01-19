@@ -8,7 +8,7 @@ import ball from "../assets/ball.png";
 
 function App() {
   // possible values: startscreen, playing, winscreen, losescreen
-  const [gameStatus, setGameStatus] = useState("losescreen");
+  const [gameStatus, setGameStatus] = useState("startscreen");
   const [highscore, setHighscore] = useState(0);
 
   //TODO: see if this works as it should, and any other variables shouldnt be reset
@@ -20,7 +20,7 @@ function App() {
     setGameStatus("playingeasy");
   }
   function handleStartMedium() {
-    setGameStatus("playingmedium");
+    setGameStatus("playingmedium"); 
   }
   function handleStartHard() {
     setGameStatus("playinghard");
@@ -32,6 +32,10 @@ function App() {
 
   function handleLoss() {
     setGameStatus("losescreen");
+  }
+
+  function manageScore(){
+    console.log("scored")
   }
 
 
@@ -53,7 +57,7 @@ function App() {
     case "playingeasy": {
       rendercontents = (
         <main className="playing">
-          <GameBoard amount={6} />
+          <GameBoard amount={6} winFunct={handleWin} loseFunct={handleLoss} scoreFunct={manageScore}/>
           <ScoreBoard highscore={highscore} />
         </main>
       );
@@ -62,7 +66,7 @@ function App() {
     case "playingmedium": {
       rendercontents = (
         <main className="playing">
-          <GameBoard amount={9} />
+          <GameBoard amount={9} winFunct={handleWin} loseFunct={handleLoss} scoreFunct={manageScore}/>
           <ScoreBoard highscore={highscore} />
         </main>
       );
@@ -71,7 +75,7 @@ function App() {
     case "playinghard": {
       rendercontents = (
         <main className="playing">
-          <GameBoard amount={15} />
+          <GameBoard amount={15} winFunct={handleWin} loseFunct={handleLoss} scoreFunct={manageScore}/>
           <ScoreBoard highscore={highscore} />
         </main>
       );

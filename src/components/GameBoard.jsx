@@ -66,6 +66,7 @@ async function getRandomPokemon(amount) {
         pokemon.species.name.slice(1),
       img: image,
       key: crypto.randomUUID(),
+      selected: false,
     };
 
     selectedPokemon.push(parsedPokemon);
@@ -86,15 +87,48 @@ function fisherYatesShuffle(deck) {
   return deck;
 }
 
-export default function GameBoard({ amount = 0 }) {
+export default function GameBoard({
+  amount = 0,
+  winFunct = () => {},
+  loseFunct = () => {},
+  scoreFunct = () => {},
+}) {
   const [currPokemon, setCurrPokemon] = useState([]);
 
   //Function to handle card clicks
-  function handleCardClick() {
-    let curr = [...currPokemon];
-    let newState = fisherYatesShuffle(curr); // Shuffle a copy of the array
 
+  function handleCardClick(eventName) {
+
+    let curr = [...currPokemon];
+
+    //finds the index of the clicked mon
+    const pos = curr.map((e) => e.name).indexOf(eventName);
+
+    //checks or sets the pokemon selected status and adds score
+    if (!curr[pos].selected) {
+      curr[pos].selected = true;
+      scoreFunct();
+    } else {
+      //handles loss
+      loseFunct();
+    }
+
+    //checks for a win condition
+    checkForWin(curr);
+
+    //shuffles pokemon
+    let newState = fisherYatesShuffle(curr);
     setCurrPokemon(newState);
+  }
+
+  function checkForWin(array) {
+    let won = true;
+
+    array.forEach((element) => {
+      if (!element.selected) won = false;
+    });
+
+    if (won) winFunct();
   }
 
   useEffect(() => {
